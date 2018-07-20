@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'user',
+    'goods',
+    'trade',
+    'user_operation',
+    'ckeditor'
 ]
 
 MIDDLEWARE = [
@@ -74,10 +79,23 @@ WSGI_APPLICATION = 'Django_shop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
+
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'django_shop',
+        'USER': 'root',
+        # 'PASSWORD': os.environ['MYSQL_PASS'],
+        'PASSWORD': 'pass12345',
+        'HOST': '',
+        'PORT': '3306',
     }
 }
 
